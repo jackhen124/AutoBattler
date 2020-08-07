@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Fonts/DescFont.tres" type="DynamicFont" id=1]
+
+[sub_resource type="Theme" id=1]
+
+[node name="UnitInfoPanel" type="Panel"]
+margin_right = 212.0
+margin_bottom = 232.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="desc" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 116.0
+margin_right = 196.0
+margin_bottom = 216.0
+custom_fonts/font = ExtResource( 1 )
+text = "desc"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

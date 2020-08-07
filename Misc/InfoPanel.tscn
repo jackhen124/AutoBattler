@@ -1,0 +1,279 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Icons/Icon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Misc/InfoPanel.gd" type="Script" id=2]
+[ext_resource path="res://Icons/TribeIcon.gd" type="Script" id=3]
+[ext_resource path="res://Icons/ClasIcon.gd" type="Script" id=4]
+[ext_resource path="res://assets/earthIcon.png" type="Texture" id=5]
+[ext_resource path="res://assets/Fonts/smallerDescFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/starBar.png" type="Texture" id=7]
+[ext_resource path="res://assets/Fonts/StatFontInfo.tres" type="DynamicFont" id=8]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="InfoPanel" type="Panel"]
+margin_right = 212.0
+margin_bottom = 232.0
+mouse_filter = 2
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TribeList" type="VBoxContainer" parent="."]
+margin_left = 44.0
+margin_top = 16.0
+margin_right = 84.0
+margin_bottom = 136.0
+size_flags_vertical = 0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Earth" parent="TribeList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 32.0
+script = ExtResource( 3 )
+
+[node name="Wind" parent="TribeList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 42.0
+margin_right = 40.0
+margin_bottom = 74.0
+script = ExtResource( 3 )
+
+[node name="Water" parent="TribeList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 84.0
+margin_right = 40.0
+margin_bottom = 116.0
+script = ExtResource( 3 )
+
+[node name="Fire" parent="TribeList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 126.0
+margin_right = 40.0
+margin_bottom = 158.0
+script = ExtResource( 3 )
+
+[node name="ClassList" type="VBoxContainer" parent="."]
+margin_left = 136.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 168.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warrior" parent="ClassList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 32.0
+script = ExtResource( 4 )
+
+[node name="Hunter" parent="ClassList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 42.0
+margin_right = 40.0
+margin_bottom = 74.0
+script = ExtResource( 4 )
+
+[node name="Guardian" parent="ClassList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 84.0
+margin_right = 40.0
+margin_bottom = 116.0
+script = ExtResource( 4 )
+
+[node name="Mage" parent="ClassList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 126.0
+margin_right = 40.0
+margin_bottom = 158.0
+script = ExtResource( 4 )
+
+[node name="Shaman" parent="ClassList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 168.0
+margin_right = 40.0
+margin_bottom = 200.0
+script = ExtResource( 4 )
+
+[node name="TribesLabel" type="TextEdit" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="UnitInfo" type="Panel" parent="."]
+visible = false
+margin_right = 212.0
+margin_bottom = 272.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="UnitInfo"]
+margin_left = 16.0
+margin_top = 160.0
+margin_right = 200.0
+margin_bottom = 212.0
+custom_fonts/font = ExtResource( 6 )
+text = "description ddddddddddddddddddddddddddddddddddddddddddddddddddd"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Statbar" type="Sprite" parent="UnitInfo"]
+position = Vector2( 104, 124 )
+scale = Vector2( 2.40625, 2.40625 )
+texture = ExtResource( 7 )
+
+[node name="Attack" type="Label" parent="UnitInfo"]
+margin_left = 60.0
+margin_top = 100.0
+margin_right = 100.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 8 )
+text = "12"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="UnitInfo"]
+margin_left = 112.0
+margin_top = 100.0
+margin_right = 160.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 8 )
+text = "12"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="atLabel" type="Label" parent="UnitInfo"]
+margin_left = 52.0
+margin_top = 136.0
+margin_right = 100.0
+margin_bottom = 163.0
+custom_fonts/font = ExtResource( 6 )
+text = "Attack
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heLabel" type="Label" parent="UnitInfo"]
+margin_left = 40.0
+margin_top = 136.0
+margin_right = 224.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 6 )
+text = "Health"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="UnitInfo"]
+position = Vector2( 108, 60 )
+scale = Vector2( 2.25, 2.25 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="TribeSprite" type="Sprite" parent="UnitInfo"]
+position = Vector2( 68, 240 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="ClasSprite" type="Sprite" parent="UnitInfo"]
+position = Vector2( 144, 240 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="BonusInfo" type="Panel" parent="."]
+visible = false
+margin_top = 236.0
+margin_right = 212.0
+margin_bottom = 332.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="BonusInfo"]
+position = Vector2( 28, 28 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="BonusInfo"]
+margin_top = 56.0
+margin_right = 56.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 6 )
+text = "test"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="BonusInfo"]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 208.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 6 )
+text = "Description"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BonusInfo2" type="Panel" parent="."]
+visible = false
+margin_top = 336.0
+margin_right = 212.0
+margin_bottom = 432.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="BonusInfo2"]
+margin_left = 4.0
+margin_top = 8.0
+margin_right = 208.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 6 )
+text = "Description"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

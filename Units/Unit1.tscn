@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/unit1A.png" type="Texture" id=1]
+[ext_resource path="res://Units/unit1.gd" type="Script" id=2]
+[ext_resource path="res://Units/UnitOverlay.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 29 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Unit1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.98023e-08, 0 )
+scale = Vector2( 1.9446, 1.9446 )
+frames = SubResource( 5 )
+speed_scale = 0.35
+playing = true
+offset = Vector2( -0.508612, -13.7325 )
+
+[node name="UnitOverlay" parent="." instance=ExtResource( 3 )]

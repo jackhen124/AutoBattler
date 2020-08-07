@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Store/Store.gd" type="Script" id=1]
+[ext_resource path="res://Misc/CoinLabel.tscn" type="PackedScene" id=2]
+
+[node name="Store" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = 216.0
+margin_right = 1024.0
+margin_bottom = 232.0
+color = Color( 0.54902, 0.54902, 0.54902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selection" type="ColorRect" parent="."]
+margin_left = 400.0
+margin_top = 24.0
+margin_right = 912.0
+margin_bottom = 216.0
+color = Color( 0.819608, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="b4" type="Position2D" parent="Selection"]
+position = Vector2( 448, 88 )
+
+[node name="b3" type="Position2D" parent="Selection"]
+position = Vector2( 360, 88 )
+
+[node name="b2" type="Position2D" parent="Selection"]
+position = Vector2( 264, 88 )
+
+[node name="b1" type="Position2D" parent="Selection"]
+position = Vector2( 168, 88 )
+
+[node name="b0" type="Position2D" parent="Selection"]
+position = Vector2( 74, 90 )
+
+[node name="RerollButton" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 16.0
+margin_right = 384.0
+margin_bottom = 80.0
+text = "Reroll"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FreezeButton" type="Button" parent="."]
+visible = false
+margin_left = 304.0
+margin_top = 88.0
+margin_right = 384.0
+margin_bottom = 152.0
+text = "Freeze"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextRoundButton" type="Button" parent="."]
+margin_left = 920.0
+margin_top = 136.0
+margin_right = 1014.0
+margin_bottom = 216.0
+text = "Next Round"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelupButton" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 160.0
+margin_right = 384.0
+margin_bottom = 220.0
+text = "Level Up"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowNextButton" type="Button" parent="."]
+margin_left = 928.0
+margin_top = 56.0
+margin_right = 1008.0
+margin_bottom = 120.0
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RerollCoinLabel" parent="." instance=ExtResource( 2 )]
+margin_left = 240.0
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 48.0
+
+[node name="LevelupCoinLabel" parent="." instance=ExtResource( 2 )]
+margin_left = 240.0
+margin_top = 192.0
+margin_right = 240.0
+margin_bottom = 192.0
+[connection signal="pressed" from="RerollButton" to="." method="_on_RerollButton_pressed"]
+[connection signal="pressed" from="NextRoundButton" to="." method="_on_NextRoundButton_pressed"]
+[connection signal="pressed" from="LevelupButton" to="." method="_on_BuyExpButton_pressed"]

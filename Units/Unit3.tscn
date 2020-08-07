@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Units/Unit3.gd" type="Script" id=1]
+[ext_resource path="res://assets/unit3a.png" type="Texture" id=2]
+[ext_resource path="res://Units/UnitOverlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/unit3b.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Unit3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 2.98023e-08, -8.73115e-11 )
+scale = Vector2( 0.861624, 0.861624 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.6
+playing = true
+offset = Vector2( 4.7348, -29.0304 )
+
+[node name="UnitOverlay" parent="." instance=ExtResource( 3 )]

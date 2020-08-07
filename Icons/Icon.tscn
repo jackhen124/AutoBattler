@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/waterIcon.png" type="Texture" id=1]
+[ext_resource path="res://Icons/Icon.gd" type="Script" id=2]
+
+[node name="Icon" type="TextureButton"]
+anchor_right = 0.031
+anchor_bottom = 0.053
+margin_right = 0.255999
+margin_bottom = 0.199999
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="." to="." method="_on_Icon_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Icon_mouse_exited"]

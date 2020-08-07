@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Fonts/StatFontLarger1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/01coin.png" type="Texture" id=2]
+[ext_resource path="res://Misc/CoinLabel.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 120, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 240, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 360, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 480, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 720, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 840, 0, 120, 120 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="CoinLabel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 9 )
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 24.0
+margin_top = -26.0
+margin_right = 192.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 1 )
+text = "12"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
